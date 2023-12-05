@@ -1,9 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
-import { RoutePathProps } from '../types/component-types';
-// import { RouteConfig } from '../types/component-types';
+import { RouteConfig } from '../types/component-types';
 
-const routes = [
+const routes: RouteConfig[] = [
   {
     path: '/',
     exact: true,
@@ -11,13 +10,13 @@ const routes = [
   },
 ];
 
-const RoutePath: React.FC<RoutePathProps> = () => (
+const RoutePath: React.FC<{ key: number }> = ({ key }) => (
   <Routes>
     {routes.map((route, index) => (
       <Route
-        key={index}
+        key={index} 
         path={route.path}
-        element={<route.component />}
+        element={<route.component key={key} />} 
       />
     ))}
   </Routes>
