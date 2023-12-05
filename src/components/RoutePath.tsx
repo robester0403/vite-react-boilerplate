@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import { RoutePathProps } from '../types/component-types';
+// import { RouteConfig } from '../types/component-types';
 
 const routes = [
   {
