@@ -1,25 +1,25 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
+import { RoutePathProps } from '../types/component-types';
 
 const routes = [
-    {
-        path: '/',
-        exact: true,
-        component: Home,
-    }
-]
+  {
+    path: '/',
+    exact: true,
+    component: Home,
+  },
+];
 
-const RoutePath = () => (
-    <Routes>
-      {routes.map((route, index) => (
-        <Route
-          key={index}
-          path={route.path}
-          exact={route.exact}
-          component={route.component}
-        />
-      ))}
-    </Routes>
-  );
-  
-  export default RoutePath;
+const RoutePath: React.FC<RoutePathProps> = () => (
+  <Routes>
+    {routes.map((route, index) => (
+      <Route
+        key={index}
+        path={route.path}
+        element={<route.component />}
+      />
+    ))}
+  </Routes>
+);
+
+export default RoutePath;
