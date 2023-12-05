@@ -1,14 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./Routes";
 const AppRouter = () => {
-    return (
-        <Router>
-            <Switch>
-                <Route path="/" exact component={} />
-            </Switch>
-        </Router>
-    )
-}
+  return (
+    <Router>
+      <Routes />
+    </Router>
+  );
+};
 
 export default AppRouter;
