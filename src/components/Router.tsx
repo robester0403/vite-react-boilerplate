@@ -1,9 +1,9 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import Routes from "./RoutePath";
+import RoutePath from "./RoutePath";
 const AppRouter = () => {
   return (
     <Router>
-      <Routes />
+      <RoutePath />
     </Router>
   );
 };
