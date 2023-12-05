@@ -9,7 +9,7 @@ const routes = [
     }
 ]
 
-const Routes = () => (
+const RoutePath = () => (
     <Routes>
       {routes.map((route, index) => (
         <Route
@@ -22,4 +22,4 @@ const Routes = () => (
     </Routes>
   );
   
-  export default Routes;
+  export default RoutePath;
