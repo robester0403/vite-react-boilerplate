@@ -1,22 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
-import { RouteConfig } from '../types/component-types';
+import { RoutePathProps } from '../types/component-types';
 
-const routes: RouteConfig[] = [
+const routes = [
   {
     path: '/',
-    exact: true,
-    component: Home,
+    element: <Home />,
   },
 ];
 
-const RoutePath: React.FC<{ key: number }> = ({ key }) => (
+const RoutePath: React.FC<RoutePathProps> = () => (
   <Routes>
     {routes.map((route, index) => (
       <Route
         key={index} 
         path={route.path}
-        element={<route.component key={key} />} 
+        element={route.element}
       />
     ))}
   </Routes>
