@@ -1,11 +1,23 @@
-import Home from "./pages/home";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { RouteConfig } from './types/component-types';
+import Home from './pages/home';
 
-const routes = [
+const renderRoutes = (routes: RouteConfig[]) => {
+  return routes.map((route) => (
+    <Route
+      key={route.path}
+      path={route.path}
+      element={<route.element />}
+    >
+      {route.children && renderRoutes(route.children)}
+    </Route>
+  ));
+};
+
+const appRoutes: RouteConfig[] = [
   {
     path: '/',
-    element: <Home />,
+    element: Home,
   },
 ];
 
@@ -13,9 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {routes.map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
-        ))}
+        {renderRoutes(appRoutes)}
       </Routes>
     </BrowserRouter>
   );
