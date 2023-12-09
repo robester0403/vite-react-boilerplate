@@ -5,15 +5,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const routes = [
   {
     path: '/',
-    component: Home,
+    element: <Home />,
   },
-]
+];
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {routes.map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
       </Routes>
     </BrowserRouter>
   );
