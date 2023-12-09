@@ -4,6 +4,6 @@ key: number;
 
 export interface RouteConfig {
     path: string;
-    exact: boolean;
-    component: React.ComponentType<RoutePathProps>;
+    component: React.ComponentType;
+    children?: RouteConfig[];
   }
