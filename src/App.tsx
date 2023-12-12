@@ -1,33 +1,26 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { RouteConfig } from './types/component-types';
-import Home from './pages/home';
 
 const renderRoutes = (routes: RouteConfig[]) => {
-  return routes.map((route) => (
-    <Route
-      key={route.path}
-      path={route.path}
-      element={<route.element />}
-    >
-      {route.children && renderRoutes(route.children)}
-    </Route>
-  ));
+  return routes.map((route) => {
+    const { path, component: Component, children } = route;
+    return (
+      <Route key={path} path={path} element={<Component />}>
+        {children && renderRoutes(children)}
+      </Route>
+    );
+  });
 };
 
-const appRoutes: RouteConfig[] = [
-  {
-    path: '/',
-    element: Home,
-  },
-];
+
+
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        {renderRoutes(appRoutes)}
-      </Routes>
+      <Routes>{renderRoutes(routes)}</Routes>
     </BrowserRouter>
+
   );
 }
 

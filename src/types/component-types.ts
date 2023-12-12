@@ -1,6 +1,6 @@
 export interface RouteConfig {
   path: string;
-  element: React.ComponentType;
+  component: React.ComponentType;
   children?: RouteConfig[];
 }
 
