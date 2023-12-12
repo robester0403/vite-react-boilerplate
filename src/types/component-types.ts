@@ -1,9 +1,8 @@
+import React from "react";
+
 export interface RouteConfig {
   path: string;
-  component: React.ComponentType;
+  component: React.FC;
   children?: RouteConfig[];
 }
 
-export interface RouterProps {
-  routes: RouteConfig[];
-}

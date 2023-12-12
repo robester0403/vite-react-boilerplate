@@ -21,4 +21,5 @@ function App({ routes }: { routes: RouteConfig[] }) {
   );
 }
 
+
 export default App;
