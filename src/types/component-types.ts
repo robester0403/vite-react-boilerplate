@@ -5,5 +5,5 @@ export interface RouteConfig {
 }
 
 export interface RouterProps {
-  routes: RouteConfig[];
+  route: RouteConfig[];
 }

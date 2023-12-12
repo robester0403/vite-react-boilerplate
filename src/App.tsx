@@ -13,14 +13,11 @@ const renderRoutes = (routes: RouteConfig[]) => {
 };
 
 
-
-
-function App() {
+function App({ routes }: { routes: RouteConfig[] }) {
   return (
     <BrowserRouter>
       <Routes>{renderRoutes(routes)}</Routes>
     </BrowserRouter>
-
   );
 }
 
