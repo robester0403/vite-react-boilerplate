@@ -7,7 +7,10 @@ const initialState: UserState = {
   age: 0,
 };
 
-const userReducer = (state = initialState, action) => {
+const userReducer = (
+  state: UserState = initialState,
+  action: UpdateUserAction
+): UserState => {
   switch (action.type) {
     default:
       return state;
