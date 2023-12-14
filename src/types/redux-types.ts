@@ -6,3 +6,9 @@ export interface UpdateUserAction {
     age: number;
   };
 }
+
+export interface UserState {
+  name: string;
+  email: string;
+  age: number;
+}
