@@ -12,6 +12,13 @@ const userReducer = (
   action: UpdateUserAction
 ): UserState => {
   switch (action.type) {
+    case "UPDATE_USER":
+      return {
+        ...state,
+        name: action.payload.name,
+        email: action.payload.email,
+        age: action.payload.age,
+      };
     default:
       return state;
   }
