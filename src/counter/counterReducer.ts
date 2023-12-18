@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CounterState } from "../types/redux-types";
+import { incrementAsync } from "./counterActions";
 const initialState: CounterState = {
   value: 0,
 };
