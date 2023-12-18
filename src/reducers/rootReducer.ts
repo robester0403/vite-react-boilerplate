@@ -1,8 +1,10 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { CounterState } from "../types/redux-types";
+import { UserState } from "../types/redux-types";
 
-const initialState: CounterState = {
-  value: 0,
+const initialState: UserState = {
+  name: "",
+  email: "",
+  age: 0,
 };
 
 const rootReducer = createSlice({
@@ -11,6 +13,9 @@ const rootReducer = createSlice({
   reducers: {
     increment: (state) => {
       state.value += 1;
+    },
+    decrement: (state) => {
+      state.value -= 1;
     },
   },
 });
