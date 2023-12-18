@@ -3,3 +3,7 @@ export interface UserState {
   email: string;
   age: number;
 }
+
+export interface CounterState {
+  value: number;
+}
