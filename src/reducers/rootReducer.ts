@@ -1,4 +1,4 @@
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { UserState } from "../types/redux-types";
 
 const initialState: UserState = {
@@ -8,14 +8,11 @@ const initialState: UserState = {
 };
 
 const rootReducer = createSlice({
-  name: "counter",
+  name: "user",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
+    setUser: (state, action: PayloadAction<UserState>) => {
+      return { ...state, ...action.payload };
     },
   },
 });
