@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CounterState } from "../types/redux-types";
-
 const initialState: CounterState = {
   value: 0,
 };
@@ -18,5 +17,10 @@ const counterReducer = createSlice({
     incrementByAmount: (state, action: PayloadAction<number>) => {
       state.value += action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(incrementAsync.pending, () => {
+      console.log("incrementAsync.pending");
+    });
   },
 });
