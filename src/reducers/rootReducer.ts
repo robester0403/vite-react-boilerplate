@@ -16,3 +16,7 @@ const rootReducer = createSlice({
     },
   },
 });
+
+export const { setUser } = rootReducer.actions;
+
+export default rootReducer.reducer;
