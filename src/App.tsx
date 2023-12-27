@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { RouteConfig } from './types/component-types';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { RouteConfig } from "./types/component-types";
+import { routes } from "./router/routes";
 
 const renderRoutes = (routes: RouteConfig[]) => {
   return routes.map((route) => {
@@ -12,14 +13,12 @@ const renderRoutes = (routes: RouteConfig[]) => {
   });
 };
 
-
-function App({ routes }: { routes: RouteConfig[] }) {
+function App() {
   return (
     <BrowserRouter>
       <Routes>{renderRoutes(routes)}</Routes>
     </BrowserRouter>
   );
 }
-
 
 export default App;
